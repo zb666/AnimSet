@@ -10,6 +10,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
+import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -32,6 +33,7 @@ public class BezierView extends View implements View.OnClickListener {
     private int mFlagPointY;
     private int mStartPointY;
     private Bitmap mBezierBitmap;
+    private RectF rectF;
 
 
     public BezierView(Context context) {
@@ -77,6 +79,9 @@ public class BezierView extends View implements View.OnClickListener {
         mBezierBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
 
 
+        rectF = new RectF();
+        rectF.set(100,100,400,400);
+
     }
 
     @Override
@@ -91,6 +96,8 @@ public class BezierView extends View implements View.OnClickListener {
 
         canvas.drawCircle(mMovePointX,mMovePointY,20,mPaintCircle);
 
+        canvas.drawArc(rectF,0f,120f,false,mPaintPath);
+        canvas.drawText("65%",300,300,mPaintCircle);
     }
 
     @Override

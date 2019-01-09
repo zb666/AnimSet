@@ -8,11 +8,20 @@
     tools:context=".MainActivity">
 
     <com.anim.bod.animset.view.BezierView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/bezier"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:background="@drawable/lottery_animlist"
+        app:layout_constraintTop_toBottomOf="@+id/bezier"
+        app:layout_constraintLeft_toLeftOf="@+id/bezier"
+        android:layout_width="200dp"
+        android:layout_height="100dp" />
 
 </android.support.constraint.ConstraintLayout>
